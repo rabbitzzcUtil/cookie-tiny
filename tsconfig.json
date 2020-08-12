@@ -17,5 +17,5 @@
         "node_modules",
         "**/__tests__/*"
     ],
-    "suppressImplicitAnyIndexErrors":true,
+    "suppressImplicitAnyIndexErrors": true,
 }

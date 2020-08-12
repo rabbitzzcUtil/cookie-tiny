@@ -1,23 +1,41 @@
 {
-  "name": "cookie-tiny",
-  "version": "1.0.0",
-  "description": "A simple, tiny library for handling cookies.",
-  "main": "index.js",
-  "author": "Rabbitzzc",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "lint": "tslint -p tsconfig.json",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "build": "tsc && uglifyjs dist/*.js -o cookie.min.js"
-  },
-  "devDependencies": {
-    "prettier": "^2.0.5",
-    "tape": "^5.0.1",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.9.7",
-    "uglify-js": "^3.10.1"
-  },
-  "files": ["lib/**/*"]
+    "name": "cookie-tiny",
+    "version": "1.0.0",
+    "description": "A simple, tiny library for handling cookies.",
+    "main": "dist/cookie.js",
+    "types": "dist/cookie.d.ts",
+    "author": "Rabbitzzc",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "lint": "tslint -p tsconfig.json",
+        "test": "",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+        "build": "rm -rf dist && tsc",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "npm run format && git add -A src",
+        "postversion": "git push && git push --tags"
+    },
+    "devDependencies": {
+        "prettier": "^2.0.5",
+        "tape": "^5.0.1",
+        "tslint": "^6.1.3",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "^3.9.7",
+        "uglify-js": "^3.10.1"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "keywords": [
+        "cookie",
+        "cookie-tiny"
+    ],
+    "homepage": "https://github.com/ra-utility/cookie-tiny",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ra-utility/cookie-tiny.git"
+    }
 }
