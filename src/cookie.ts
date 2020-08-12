@@ -58,12 +58,16 @@ class Cookie {
         return this
     }
 
-    public get(key: string | string[]) {
-        const cookies = this.all()
+    public get(key: any) {
+        const cookies: {
+            [key: string]: any
+        } = this.all()
 
         if (!Array.isArray(key as string)) return cookies[key]
 
-        const result = {}
+        const result: {
+            [key: string]: any
+        } = {}
 
         key.forEach((v: string | number) => {
             result[v] = cookies[v]

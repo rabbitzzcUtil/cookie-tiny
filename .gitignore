@@ -1,1 +1,9 @@
 node_modules
+
+lib
+
+dist
+
+*.min.js
+
+.DS_Store
