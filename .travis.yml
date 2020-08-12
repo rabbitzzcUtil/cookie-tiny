@@ -15,7 +15,7 @@ jobs:
       node_js: "10"
       script: yarn build
       before_deploy:
-        - cd lib
+        - cd dist
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
